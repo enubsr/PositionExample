@@ -30,44 +30,30 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
             return e;
         }
 
-        /**
-         * @return the prev
-         */
         public Node<E> getPrev() {
             return prev;
         }
 
-        /**
-         * @param prev the prev to set
-         */
-        public void setPrev(Node<E> prev) {
+       public void setPrev(Node<E> prev) {
             this.prev = prev;
         }
 
-        /**
-         * @return the next
-         */
         public Node<E> getNext() {
             return next;
         }
 
-        /**
-         * @param next the next to set
-         */
-        public void setNext(Node<E> next) {
+       public void setNext(Node<E> next) {
             this.next = next;
         }
 
-        /**
-         * @param e the e to set
-         */
-        public void setElement(E e) {
+       public void setElement(E e) {
             this.e = e;
         }
         
     }
     
-    private Node<E> header, trailer;
+    private final Node<E> header;
+    private final Node<E> trailer;
     private int size;
     
     public LinkedPositionalList(){
@@ -96,7 +82,6 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
         }
         
         Position<E> p = (Position<E>) node;
-        
         return p;
     }
     
@@ -184,16 +169,5 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
         node.setElement(null);
         
         return temp;
-    }
-    
-    public void showPositionList(){
-//        System.out.println(first().getElement());
-//        System.out.println(after(first()).getElement());
-//        System.out.println(after(after(first())).getElement());
-        Position<E> temp = first();
-        for(int i = 0; i < size; i++){
-            System.out.print("[" + temp.getElement() + "]");
-            temp = after(temp);
-        }
     }
 }

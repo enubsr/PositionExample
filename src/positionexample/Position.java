@@ -8,7 +8,13 @@ package positionexample;
 /**
  *
  * @author Enubs
+ * @param <E>
  */
 public interface Position<E> {
     public E getElement() throws IllegalStateException;
 }
+
+
+
+
+
